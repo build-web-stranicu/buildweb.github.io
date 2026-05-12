@@ -1,10 +1,274 @@
 <!DOCTYPE html>
-<html>
+<html lang="hr">
 <head>
-    <title>Moja stranica</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Build Web Stranicu</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#0f172a;
+      color:white;
+      line-height:1.6;
+    }
+
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:25px 10%;
+      position:fixed;
+      width:100%;
+      top:0;
+      background:#0f172a;
+      border-bottom:1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo{
+      font-size:24px;
+      font-weight:bold;
+      color:#38bdf8;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:25px;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#38bdf8;
+    }
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:120px 10%;
+      background:linear-gradient(to bottom right,#0f172a,#111827);
+    }
+
+    .hero-content h1{
+      font-size:60px;
+      margin-bottom:20px;
+    }
+
+    .hero-content p{
+      max-width:700px;
+      margin:auto;
+      color:#cbd5e1;
+      font-size:20px;
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:35px;
+      padding:15px 35px;
+      background:#38bdf8;
+      color:#0f172a;
+      text-decoration:none;
+      font-weight:bold;
+      border-radius:10px;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      background:#7dd3fc;
+    }
+
+    section{
+      padding:100px 10%;
+    }
+
+    .title{
+      text-align:center;
+      font-size:40px;
+      margin-bottom:50px;
+    }
+
+    .services{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:30px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:30px;
+      border-radius:20px;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#38bdf8;
+    }
+
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:30px;
+    }
+
+    .project{
+      background:#1e293b;
+      border-radius:20px;
+      overflow:hidden;
+    }
+
+    .project img{
+      width:100%;
+      display:block;
+    }
+
+    .project-content{
+      padding:20px;
+    }
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin-bottom:20px;
+      color:#cbd5e1;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      color:#94a3b8;
+    }
+
+    @media(max-width:768px){
+      .hero-content h1{
+        font-size:40px;
+      }
+
+      nav{
+        display:none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <h1>Bok, ja sam </h1>
-    <p>Radim.</p>
+
+<header>
+  <div class="logo">Build Web Stranicu</div>
+
+  <nav>
+    <a href="#usluge">Usluge</a>
+    <a href="#projekti">Projekti</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Profesionalne Web Stranice</h1>
+
+    <p>
+      Izrađujem moderne, brze i profesionalne web stranice
+      za male biznise, obrte i lokalne firme.
+    </p>
+
+    <a href="#kontakt" class="btn">Kontaktiraj me</a>
+  </div>
+</section>
+
+<section id="usluge">
+  <h2 class="title">Moje Usluge</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <h3>Business Web Stranice</h3>
+      <p>
+        Moderne stranice za firme, obrte i lokalne biznise.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Responsive Dizajn</h3>
+      <p>
+        Stranice prilagođene mobitelima, tabletima i računalima.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Brza Izrada</h3>
+      <p>
+        Kvalitetna i profesionalna izrada u kratkom roku.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="projekti">
+  <h2 class="title">Projekti</h2>
+
+  <div class="projects">
+
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div class="project-content">
+        <h3>Restoran Web</h3>
+        <p>Moderan dizajn za restoran i online rezervacije.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div class="project-content">
+        <h3>Shop Web</h3>
+        <p>Profesionalna stranica za lokalni webshop.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop" alt="">
+      <div class="project-content">
+        <h3>Agency Landing Page</h3>
+        <p>Elegantna i moderna poslovna prezentacija.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="kontakt" class="contact">
+  <h2 class="title">Kontakt</h2>
+
+  <p>
+    Trebaš profesionalnu web stranicu za svoj biznis?
+  </p>
+
+  <a class="btn" href="mailto:youremail@gmail.com">
+    Pošalji Email
+  </a>
+</section>
+
+<footer>
+  © 2026 Build Web Stranicu. Sva prava pridržana.
+</footer>
+
 </body>
 </html>

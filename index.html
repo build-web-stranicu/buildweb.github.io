@@ -10,7 +10,8 @@
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial, sans-serif;
+      font-family:Arial,sans-serif;
+      scroll-behavior:smooth;
     }
 
     body{
@@ -20,15 +21,16 @@
     }
 
     header{
+      position:fixed;
+      top:0;
+      width:100%;
+      background:#0f172a;
+      padding:20px 10%;
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:25px 10%;
-      position:fixed;
-      width:100%;
-      top:0;
-      background:#0f172a;
       border-bottom:1px solid rgba(255,255,255,0.1);
+      z-index:1000;
     }
 
     .logo{
@@ -48,22 +50,25 @@
       color:#38bdf8;
     }
 
+    section{
+      padding:110px 10%;
+    }
+
     .hero{
       min-height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
       text-align:center;
-      padding:120px 10%;
       background:linear-gradient(to bottom right,#0f172a,#111827);
     }
 
-    .hero-content h1{
-      font-size:60px;
+    .hero h1{
+      font-size:65px;
       margin-bottom:20px;
     }
 
-    .hero-content p{
+    .hero p{
       max-width:700px;
       margin:auto;
       color:#cbd5e1;
@@ -77,27 +82,24 @@
       background:#38bdf8;
       color:#0f172a;
       text-decoration:none;
+      border-radius:12px;
       font-weight:bold;
-      border-radius:10px;
       transition:0.3s;
     }
 
     .btn:hover{
-      transform:translateY(-3px);
-      background:#7dd3fc;
-    }
-
-    section{
-      padding:100px 10%;
+      transform:translateY(-5px);
     }
 
     .title{
       text-align:center;
-      font-size:40px;
+      font-size:42px;
       margin-bottom:50px;
     }
 
-    .services{
+    .services,
+    .team,
+    .blog{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:30px;
@@ -114,160 +116,331 @@
       transform:translateY(-10px);
     }
 
+    .card img{
+      width:100%;
+      border-radius:15px;
+      margin-bottom:20px;
+    }
+
     .card h3{
       margin-bottom:15px;
       color:#38bdf8;
     }
 
-    .projects{
+    .about{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:50px;
+      align-items:center;
+    }
+
+    .about img{
+      width:100%;
+      border-radius:20px;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:25px;
+      text-align:center;
+    }
+
+    .stat-box{
+      background:#1e293b;
+      padding:40px;
+      border-radius:20px;
+    }
+
+    .stat-box h2{
+      color:#38bdf8;
+      font-size:45px;
+    }
+
+    .testimonials{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
       gap:30px;
     }
 
-    .project{
+    .testimonial{
       background:#1e293b;
+      padding:30px;
       border-radius:20px;
-      overflow:hidden;
     }
 
-    .project img{
-      width:100%;
-      display:block;
-    }
-
-    .project-content{
-      padding:20px;
-    }
-
-    .contact{
-      text-align:center;
-    }
-
-    .contact p{
-      margin-bottom:20px;
+    .testimonial p{
       color:#cbd5e1;
+      margin-bottom:15px;
     }
 
     footer{
+      padding:40px;
       text-align:center;
-      padding:30px;
       border-top:1px solid rgba(255,255,255,0.1);
       color:#94a3b8;
     }
 
-    @media(max-width:768px){
-      .hero-content h1{
-        font-size:40px;
+    @media(max-width:900px){
+
+      .about{
+        grid-template-columns:1fr;
+      }
+
+      .hero h1{
+        font-size:45px;
       }
 
       nav{
         display:none;
       }
     }
+
   </style>
 </head>
 
 <body>
 
 <header>
+
   <div class="logo">Build Web Stranicu</div>
 
   <nav>
     <a href="#usluge">Usluge</a>
-    <a href="#projekti">Projekti</a>
+    <a href="#about">O nama</a>
+    <a href="#team">Tim</a>
+    <a href="#blog">Blog</a>
     <a href="#kontakt">Kontakt</a>
   </nav>
+
 </header>
 
 <section class="hero">
-  <div class="hero-content">
-    <h1>Profesionalne Web Stranice</h1>
+
+  <div>
+    <h1>Moderne Web Stranice Za Biznise</h1>
 
     <p>
-      Izrađujem moderne, brze i profesionalne web stranice
-      za male biznise, obrte i lokalne firme.
+      Izrađujemo profesionalne, moderne i brze web stranice
+      koje pomažu firmama da privuku više klijenata i izgledaju ozbiljno online.
     </p>
 
-    <a href="#kontakt" class="btn">Kontaktiraj me</a>
+    <a href="#kontakt" class="btn">Započni Projekt</a>
   </div>
+
 </section>
 
 <section id="usluge">
-  <h2 class="title">Moje Usluge</h2>
+
+  <h2 class="title">Naše Usluge</h2>
 
   <div class="services">
 
     <div class="card">
+      <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop">
       <h3>Business Web Stranice</h3>
       <p>
-        Moderne stranice za firme, obrte i lokalne biznise.
+        Profesionalna izrada web stranica za obrte, firme i male biznise.
       </p>
     </div>
 
     <div class="card">
-      <h3>Responsive Dizajn</h3>
+      <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?q=80&w=1200&auto=format&fit=crop">
+      <h3>Moderni Dizajn</h3>
       <p>
-        Stranice prilagođene mobitelima, tabletima i računalima.
+        Moderan i elegantan dizajn prilagođen svim uređajima.
       </p>
     </div>
 
     <div class="card">
-      <h3>Brza Izrada</h3>
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop">
+      <h3>SEO Optimizacija</h3>
       <p>
-        Kvalitetna i profesionalna izrada u kratkom roku.
+        Pomažemo vašoj stranici da se bolje pozicionira na Googleu.
       </p>
     </div>
 
   </div>
+
 </section>
 
-<section id="projekti">
-  <h2 class="title">Projekti</h2>
+<section id="about">
 
-  <div class="projects">
+  <h2 class="title">O Nama</h2>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop" alt="">
-      <div class="project-content">
-        <h3>Restoran Web</h3>
-        <p>Moderan dizajn za restoran i online rezervacije.</p>
-      </div>
+  <div class="about">
+
+    <div>
+      <h3 style="font-size:35px;margin-bottom:20px;color:#38bdf8;">
+        Digitalna Agencija Novog Doba
+      </h3>
+
+      <p style="margin-bottom:20px;color:#cbd5e1;">
+        Naš cilj je pomoći lokalnim biznisima da dobiju moderan i profesionalan online izgled.
+        Fokusirani smo na brzinu, dizajn i kvalitetu.
+      </p>
+
+      <p style="color:#cbd5e1;">
+        Radimo web stranice koje izgledaju odlično na mobitelima,
+        tabletima i računalima te ostavljaju profesionalan prvi dojam.
+      </p>
     </div>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?q=80&w=1200&auto=format&fit=crop" alt="">
-      <div class="project-content">
-        <h3>Shop Web</h3>
-        <p>Profesionalna stranica za lokalni webshop.</p>
-      </div>
+    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop">
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="title">Naši Rezultati</h2>
+
+  <div class="stats">
+
+    <div class="stat-box">
+      <h2>50+</h2>
+      <p>Završenih Projekata</p>
     </div>
 
-    <div class="project">
-      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop" alt="">
-      <div class="project-content">
-        <h3>Agency Landing Page</h3>
-        <p>Elegantna i moderna poslovna prezentacija.</p>
-      </div>
+    <div class="stat-box">
+      <h2>100%</h2>
+      <p>Responsive Dizajn</p>
+    </div>
+
+    <div class="stat-box">
+      <h2>24/7</h2>
+      <p>Podrška Klijentima</p>
     </div>
 
   </div>
+
 </section>
 
-<section id="kontakt" class="contact">
+<section id="team">
+
+  <h2 class="title">Naš Tim</h2>
+
+  <div class="team">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop">
+      <h3>Frontend Developer</h3>
+      <p>
+        Specijaliziran za moderne i responsive web stranice.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop">
+      <h3>UI/UX Designer</h3>
+      <p>
+        Fokusiran na profesionalan dizajn i korisničko iskustvo.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop">
+      <h3>SEO Specialist</h3>
+      <p>
+        Pomaže klijentima da budu vidljiviji na internetu.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section>
+
+  <h2 class="title">Što Klijenti Kažu</h2>
+
+  <div class="testimonials">
+
+    <div class="testimonial">
+      <p>
+        “Vrlo profesionalna suradnja i moderan dizajn stranice.
+        Sve preporuke.”
+      </p>
+
+      <h4>- Lokalni Biznis</h4>
+    </div>
+
+    <div class="testimonial">
+      <p>
+        “Stranica izgleda odlično i radi brzo na svim uređajima.”
+      </p>
+
+      <h4>- Web Klijent</h4>
+    </div>
+
+    <div class="testimonial">
+      <p>
+        “Odlična komunikacija i brzo završavanje projekta.”
+      </p>
+
+      <h4>- Mala Firma</h4>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="blog">
+
+  <h2 class="title">Najnoviji Blogovi</h2>
+
+  <div class="blog">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop">
+      <h3>Zašto Svaki Biznis Treba Web?</h3>
+      <p>
+        Profesionalna web stranica danas je ključ uspjeha svakog biznisa.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200&auto=format&fit=crop">
+      <h3>Moderni Trendovi Dizajna</h3>
+      <p>
+        Minimalizam, brzina i mobile-first pristup dominiraju internetom.
+      </p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop">
+      <h3>Kako Dobiti Više Klijenata?</h3>
+      <p>
+        Dobra online prisutnost povećava povjerenje i prodaju.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section id="kontakt">
+
   <h2 class="title">Kontakt</h2>
 
-  <p>
-    Trebaš profesionalnu web stranicu za svoj biznis?
-  </p>
+  <div style="text-align:center;max-width:700px;margin:auto;">
 
-  <a class="btn" href="mailto:youremail@gmail.com">
-    Pošalji Email
-  </a>
+    <p style="color:#cbd5e1;margin-bottom:25px;">
+      Kontaktirajte nas za profesionalnu izradu moderne web stranice
+      za vaš biznis ili projekt.
+    </p>
+
+    <a href="mailto:kontakt@gmail.com" class="btn">
+      Pošalji Email
+    </a>
+
+  </div>
+
 </section>
 
 <footer>
-  © 2026 Build Web Stranicu. Sva prava pridržana.
+  © 2026 Build Web Stranicu — Sva prava pridržana.
 </footer>
 
 </body>
